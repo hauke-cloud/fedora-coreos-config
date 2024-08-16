@@ -1,0 +1,36 @@
+packages:
+  - cri-o
+  - kubeadm
+  - kubelet
+  - kubectl
+
+postprocess:
+  - |
+    #!/usr/bin/env bash
+    cat <<EOF > /etc/modules-load.d/crio-net.conf
+    overlay
+    br_netfilter
+    EOF
+  - |
+    #!/usr/bin/env bash
+    cat <<EOF > /etc/sysctl.d/99-kubernetes-cri.conf
+    net.bridge.bridge-nf-call-iptables  = 1
+    net.ipv4.ip_forward                 = 1
+    net.bridge.bridge-nf-call-ip6tables = 1
+    EOF
+  - |
+    #!/usr/bin/env bash
+    cat <<EOF >> /etc/crio/crio.conf
+    hooks_dir = [
+      "/etc/containers/oci/hooks.d",
+    ]
+  - |
+    #!/usr/bin/env bash
+    sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+  - |
+    #!/usr/bin/env bash
+    systemctl enable crio
+    systemctl enable kubelet
+  - |
+    #!/usr/bin/env bash
+    echo "KUBELET_EXTRA_ARGS=--cgroup-driver=systemd" | tee /etc/sysconfig/kubelet

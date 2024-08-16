@@ -11,7 +11,6 @@ rojig:
 add-commit-metadata:
   fedora-coreos.stream: ${stream}
 
-
 include: fedora-coreos-base.yaml
 conditional-include:
   - if: prod == false
@@ -30,6 +29,8 @@ conditional-include:
   # Wifi firmwares will be dropped in F41
   - if: releasever < 41
     include: wifi-firmwares.yaml
+  - if: prod == false
+    include: kubernetes.yaml
 
 ostree-layers:
   - overlay/15fcos
@@ -137,7 +138,6 @@ postprocess:
         done
     done
 
-
 remove-files:
   # We don't ship man(1) or info(1)
   - usr/share/info
@@ -158,7 +158,7 @@ exclude-packages:
   - perl-interpreter
   - nodejs
   - grubby
-  - cowsay  # Just in case
+  - cowsay # Just in case
   # Let's make sure initscripts doesn't get pulled back in
   # https://github.com/coreos/fedora-coreos-tracker/issues/220#issuecomment-611566254
   - initscripts
