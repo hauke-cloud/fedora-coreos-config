@@ -3,7 +3,7 @@ name: Trigger Fedora CoreOS Image Build Pipeline
 on:
   push:
     branches:
-      - main
+      - stable
 
 jobs:
   trigger_pipeline:
