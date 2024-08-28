@@ -24,4 +24,4 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
           repository: hauke-cloud/fedora-coreos-images
           event-type: trigger-workflow
-          client-payload: '{"tag_name": "${{ github.ref_name.replace(\"/\", \"-\") }}" }'
+          client-payload: '{"tag_name": "${{ github.ref_name }}" }'
