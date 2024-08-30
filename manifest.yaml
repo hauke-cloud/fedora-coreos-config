@@ -12,5 +12,6 @@ repos:
   - fedora
   - fedora-updates
   - kubernetes
+  - fedora-coreos-kubernetes
 
 include: manifests/fedora-coreos.yaml

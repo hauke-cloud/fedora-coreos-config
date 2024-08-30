@@ -29,7 +29,7 @@ conditional-include:
   # Wifi firmwares will be dropped in F41
   - if: releasever < 41
     include: wifi-firmwares.yaml
-  - if: prod == false
+  - if: true
     include: kubernetes.yaml
 
 ostree-layers:
@@ -59,6 +59,7 @@ packages:
   # Introduce a default colored prompt for Fedora's default shell bash.
   # https://github.com/coreos/fedora-coreos-tracker/issues/1567
   - bash-color-prompt
+  - fedora-coreos-kubernetes
 
 etc-group-members:
   # Add the docker group to /etc/group
