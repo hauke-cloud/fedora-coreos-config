@@ -59,7 +59,7 @@ packages:
   # Introduce a default colored prompt for Fedora's default shell bash.
   # https://github.com/coreos/fedora-coreos-tracker/issues/1567
   - bash-color-prompt
-  - fedora-coreos-kubernetes
+  - hop-hop-cluster
 
 etc-group-members:
   # Add the docker group to /etc/group
