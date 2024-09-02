@@ -1,6 +1,6 @@
 variables:
-  stream: testing-devel
-  prod: false
+  stream: stable
+  prod: prod
 
 releasever: 40
 

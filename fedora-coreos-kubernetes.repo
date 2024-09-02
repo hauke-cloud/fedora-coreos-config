@@ -1,4 +1,4 @@
-[fedora]
+[fedora-coreos-kubernetes]
 name=Fedora CoreOS Kubernetes (hauke.cloud)
 baseurl=https://hauke-cloud.github.io/fedora-coreos-kubernetes
 enabled=1
