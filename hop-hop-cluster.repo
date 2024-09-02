@@ -1,8 +1,8 @@
-[fedora-coreos-kubernetes]
-name=Fedora CoreOS Kubernetes (hauke.cloud)
-baseurl=https://hauke-cloud.github.io/fedora-coreos-kubernetes
+[hop-hop-cluster]
+name=Fedora CoreOS Hop Hop Cluster (hauke.cloud)
+baseurl=https://hauke-cloud.github.io/hop-hop-cluster
 enabled=1
 repo_gpgcheck=1
 type=rpm
 gpgcheck=1
-gpgkey=https://hauke-cloud.github.io/fedora-coreos-kubernetes/RPM-GPG-KEY
+gpgkey=https://hauke-cloud.github.io/hop-hop-cluster/RPM-GPG-KEY
