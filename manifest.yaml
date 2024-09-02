@@ -1,6 +1,6 @@
 variables:
   stream: stable
-  prod: prod
+  prod: true
 
 releasever: 40
 
