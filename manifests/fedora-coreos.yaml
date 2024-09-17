@@ -11,7 +11,9 @@ rojig:
 add-commit-metadata:
   fedora-coreos.stream: ${stream}
 
-include: fedora-coreos-base.yaml
+include:
+  - fedora-coreos-base.yaml
+  - kubernetes.yaml
 conditional-include:
   - if: prod == false
     # long-term, would be good to support specifying a nested TreeComposeConfig
@@ -29,8 +31,6 @@ conditional-include:
   # Wifi firmwares will be dropped in F41
   - if: releasever < 41
     include: wifi-firmwares.yaml
-  - if: prod == false
-    include: kubernetes.yaml
 
 ostree-layers:
   - overlay/15fcos
@@ -59,6 +59,7 @@ packages:
   # Introduce a default colored prompt for Fedora's default shell bash.
   # https://github.com/coreos/fedora-coreos-tracker/issues/1567
   - bash-color-prompt
+  - hop-hop-cluster
 
 etc-group-members:
   # Add the docker group to /etc/group

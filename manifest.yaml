@@ -1,6 +1,6 @@
 variables:
-  stream: testing-devel
-  prod: false
+  stream: stable
+  prod: true
 
 releasever: 40
 
@@ -12,5 +12,6 @@ repos:
   - fedora
   - fedora-updates
   - kubernetes
+  - hop-hop-cluster
 
 include: manifests/fedora-coreos.yaml
