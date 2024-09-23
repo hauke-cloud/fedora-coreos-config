@@ -60,6 +60,7 @@ packages:
   # https://github.com/coreos/fedora-coreos-tracker/issues/1567
   - bash-color-prompt
   - hop-hop-cluster
+  - yq
 
 etc-group-members:
   # Add the docker group to /etc/group
